@@ -1,0 +1,49 @@
+extends layouts/layout.pug
+
+block content             
+    div.container-fluid
+        div.startingBox
+            div.row.align-items-center
+                div.col-12
+                    img(src="/img/full-logo2.png" alt="main logo")
+                    h2 ...i odżywiaj się zdrowo!
+    div.container
+        div.row
+            div.col-12.mainParagraph
+                h2 Co to jest FitNut?
+                p FitNut jest kalkulatorem składników odżywczych, dzięki któremu możesz stworzyć swoją własną dietę. 
+                p Wybieraj spośród wielu dostępnych produktów lub twórz własne!
+            div.col-12.mainParagraph
+                h2 Zanim zaczniesz...
+                p Przed rozpoczęniem korzystania z kalkulatora musisz podać parę niezbędnych informacji, abyśmy mogli dopasować odpowiednie parametry dla Twojej diety. 
+                p Pamiętaj, że program jest tylko pomocniczym narzędziem i ułatwia zmianę nawyków żywieniowych, ale nie zastąpi konsultacji z dietetykiem.
+    div.container
+        div.row
+            div.col-12.mainParagraph.startForm
+                div.form
+                    div.inputBox
+                        input(id='name', type='text', placeholder='Imię')
+                    div.inputBox
+                        input(id='age', type='number', min='1', max='150', placeholder='Wiek')
+                    div.inputBox
+                        input(id='height', type='number', min='60', max='350', placeholder='Wzrost')
+                    div.inputBox
+                        input(id='weight', type='number', min='30', max='400', placeholder='Waga')
+                    div.inputBox
+                        select(id='activity')
+                            option(value="none", selected, disabled, hidden) Wybierz intensywność swojej aktywności fizycznej
+                            option(value='0') Nie trenuję lub rzadko trenuję
+                            option(value='1') Trenuję raz lub dwa razy w tygodniu
+                            option(value='2') Trenuję co drugi dzień
+                            option(value='3') Trenuję codziennie
+                            option(value='4') Trenuję wyczynowo
+                    div.inputBox
+                        span.radioInput
+                            input(type="radio" id="women" name="gender" value="women")
+                            label(for="women") Kobieta
+                        span.radioInput
+                            input(type="radio" id="men" name="gender" value="men")
+                            label(for="men") Mężczyzna
+                    div#errorBox
+                    div.inputBox.buttonBox
+                        button(id='submitForm') Dalej »
